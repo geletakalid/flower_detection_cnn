@@ -54,6 +54,7 @@ augmented_train_generator = augmented_datagen.flow_from_directory(
     shuffle=True
 )
 
+
 # Validation generator (NO augmentation)
 val_generator = original_datagen.flow_from_directory(
     dataset_dir,
