@@ -1,9 +1,9 @@
-# CNN Model for Image Classification
+# Flower Classification using ResNet50
 
-This repository contains a Convolutional Neural Network (CNN) model for image classification using an augmented dataset. The model is built using TensorFlow and Keras, and it leverages ResNet50 for feature extraction.
+This repository contains a Convolutional Neural Network (CNN) model for **flower classification** using an augmented dataset. The model is built using TensorFlow and Keras, and it leverages ResNet50 for feature extraction.
 
 ## Dataset
-The model is trained on an augmented dataset that includes transformations such as rotations, flips, and color adjustments to improve generalization.
+The model is trained on the **Flowers Dataset**, which consists of five categories: **Daisy, Dandelion, Rose, Sunflower, and Tulip**. The dataset is augmented with transformations such as rotations, flips, and color adjustments to improve generalization.
 
 ## Requirements
 Ensure you have the following dependencies installed:
@@ -44,7 +44,7 @@ val_generator = datagen.flow_from_directory(
 ```
 
 ## Model Architecture
-The model utilizes ResNet50 as a feature extractor, followed by fully connected layers for classification.
+The model utilizes ResNet50 as a feature extractor, followed by fully connected layers for flower classification.
 ```python
 from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.models import Model
@@ -109,7 +109,7 @@ plt.show()
 ```
 
 ## Model Inference
-To make predictions on a new image:
+To make predictions on a new flower image:
 ```python
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
@@ -123,12 +123,9 @@ def predict_image(img_path):
 
 ## Saving & Loading the Model
 ```python
-model.save("resnet50_augmented.h5")
+model.save("resnet50_flower_classification.h5")
 
 # Load model
-tf.keras.models.load_model("resnet50_augmented.h5")
+tf.keras.models.load_model("resnet50_flower_classification.h5")
 ```
-
-## License
-This project is open-source and available under the MIT License.
 
